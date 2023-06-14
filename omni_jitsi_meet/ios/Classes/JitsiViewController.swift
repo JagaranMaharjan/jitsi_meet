@@ -31,6 +31,10 @@ class JitsiMeetWrapperViewController: UIViewController {
         openJitsiMeet();
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+                   .landscape
+        }
+
     func openJitsiMeet() {
         cleanUp()
 
