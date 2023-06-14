@@ -49,6 +49,7 @@ class JitsiMeetWrapperViewController: UIViewController {
         
         let button = UIButton(type: .system)
         button.setTitle("Leave", for: .normal)
+        button.setTitleColor(.red, for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40) // Adjust the frame according to your needs
         
         button.translatesAutoresizingMaskIntoConstraints = false
