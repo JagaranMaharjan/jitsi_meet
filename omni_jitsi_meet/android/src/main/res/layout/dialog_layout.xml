@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@null"
-    android:padding="16dp">
+    android:layout_gravity="end"
+    android:background="@null">
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hang Up" />
+        android:drawableLeft="@drawable/ic_hangout"
+        android:background="@android:color/transparent"
+        android:layout_gravity="end"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:layout_margin="0dp"
+        android:includeFontPadding="false"
+        />
 
 </LinearLayout>

@@ -16,7 +16,9 @@ import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.giphy.sdk.analytics.GiphyPingbacks.context
 import com.google.gson.Gson
 import org.jitsi.meet.sdk.BroadcastEvent
 import org.jitsi.meet.sdk.BroadcastIntentHelper
@@ -35,7 +37,10 @@ class JitsiMeetPluginActivity : JitsiMeetActivity() {
         dialogBuilder.setView(dialogView)
         val alertDialog = dialogBuilder.create()
 
-        alertDialog.getWindow()?.setGravity(Gravity.BOTTOM);
+        // Get the screen orientation
+        val orientation = resources.configuration.orientation
+
+        alertDialog.window?.setGravity(Gravity.TOP or Gravity.END)
         // Set the dialog background color to transparent
         alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -47,6 +52,8 @@ class JitsiMeetPluginActivity : JitsiMeetActivity() {
 
         // Find the button in the dialog layout
         val button = dialogView.findViewById<View>(R.id.button)
+//        val drawable = AppCompatResources.getDrawable(context, R.drawable.ic_hangout) // Replace R.drawable.ic_hangout with your actual vector drawable resource
+//        button.background = drawable
 
         // Set a click listener for the button
         button.setOnClickListener {
