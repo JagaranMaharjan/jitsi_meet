@@ -84,10 +84,7 @@ class JitsiMeetWrapperViewController: UIViewController {
     }
     
     @objc func leaveButtonTapped() {
-        // Handle button tap event here
-        if let navigationController = self.navigationController {
-            navigationController.popViewController(animated: true)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func viewWillTransition(to size: CGSize,
