@@ -50,6 +50,7 @@ class JitsiMeetWrapperViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Leave", for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 40) // Adjust the frame according to your needs
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         jitsiMeetView.addSubview(button)
         let constraints = [
@@ -57,6 +58,9 @@ class JitsiMeetWrapperViewController: UIViewController {
             button.trailingAnchor.constraint(equalTo: jitsiMeetView.trailingAnchor, constant: -16)
         ]
         NSLayoutConstraint.activate(constraints)
+        
+        button.addTarget(self, action: #selector(leaveButtonTapped), for: .touchUpInside)
+
 
         // Make the jitsi view redraw when orientation changes.
         // From: https://stackoverflow.com/a/45860445/6172447
@@ -77,6 +81,13 @@ class JitsiMeetWrapperViewController: UIViewController {
         // animate in
         jitsiMeetView.alpha = 0
         pipViewCoordinator?.show()
+    }
+    
+    @objc func leaveButtonTapped() {
+        // Handle button tap event here
+        if let navigationController = self.navigationController {
+            navigationController.popViewController(animated: true)
+        }
     }
 
     override func viewWillTransition(to size: CGSize,
