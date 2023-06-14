@@ -84,6 +84,7 @@ class JitsiMeetWrapperViewController: UIViewController {
     }
     
     @objc func leaveButtonTapped() {
+        self.cleanUp()
         self.dismiss(animated: true, completion: nil)
     }
 
