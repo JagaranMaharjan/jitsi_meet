@@ -1,0 +1,18 @@
+<!--suppress AndroidUnknownAttribute -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.thorito.jitsi_meet">
+    <application>
+        <activity
+            android:name="com.thorito.jitsi_meet.JitsiMeetPluginActivity"
+            android:launchMode="singleInstance"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:resizeableActivity="true"
+            android:theme="@style/MeetingTheme"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="landscape"
+            android:supportsPictureInPicture="false"
+            android:exported="false"
+            android:autoRemoveFromRecents="true">
+        </activity>
+    </application>
+</manifest>
