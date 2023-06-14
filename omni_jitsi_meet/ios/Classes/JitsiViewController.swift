@@ -46,6 +46,17 @@ class JitsiMeetWrapperViewController: UIViewController {
         self.jitsiMeetView = jitsiMeetView
 
         jitsiMeetView.addSubview(sourceJitsiMeetView!)
+        
+        let button = UIButton(type: .system)
+        button.setTitle("Leave", for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 40) // Adjust the frame according to your needs
+        button.translatesAutoresizingMaskIntoConstraints = false
+        jitsiMeetView.addSubview(button)
+        let constraints = [
+            button.topAnchor.constraint(equalTo: jitsiMeetView.topAnchor, constant: 16),
+            button.trailingAnchor.constraint(equalTo: jitsiMeetView.trailingAnchor, constant: -16)
+        ]
+        NSLayoutConstraint.activate(constraints)
 
         // Make the jitsi view redraw when orientation changes.
         // From: https://stackoverflow.com/a/45860445/6172447
